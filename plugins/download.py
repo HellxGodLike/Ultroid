@@ -10,14 +10,14 @@ from urllib.parse import unquote_plus
 
 from pySmartDL import SmartDL
 
-from userge import Config, Message, userge
-from userge.utils import humanbytes, progress
-from userge.utils.exceptions import ProcessCanceled
+from ultroid import Config, Message, plugins
+from ultroid.plugins import humanbytes, progress
+from ultroid.plugins import ProcessCanceled
 
-LOGGER = userge.getLogger(__name__)
+LOGGER = ultroid.getLogger(__name__)
 
 
-@userge.on_cmd(
+@ultroid.on_cmd(
     "download",
     about={
         "header": "Download files to server",
