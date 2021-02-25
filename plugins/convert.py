@@ -8,10 +8,10 @@
 #
 # All rights reserved.
 
-from userge import Message, userge
+from ultroid import Message, plugins
 
 
-@userge.on_cmd(
+@ultroid.on_cmd(
     "small",
     about={"header": "Make caps smaller", "usage": "{tr}small [text | reply to msg]"},
 )
@@ -30,7 +30,7 @@ async def small_(message: Message):
     )
 
 
-@userge.on_cmd(
+@ultroid.on_cmd(
     "lower",
     about={
         "header": "Convert text to lowwer",
@@ -48,7 +48,7 @@ async def lower_(message: Message):
     await message.edit(text.lower())
 
 
-@userge.on_cmd(
+@ultroid.on_cmd(
     "upper",
     about={
         "header": "Convert text to upper",
