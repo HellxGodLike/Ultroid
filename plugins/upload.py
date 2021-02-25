@@ -14,18 +14,18 @@ from PIL import Image
 from pyrogram.errors import FloodWait
 from pyrogram.types import CallbackQuery
 
-from userge import Config, Message, userge
-from userge.plugins.misc.download import tg_download, url_download
-from userge.utils import humanbytes, progress, take_screen_shot
-from userge.utils.exceptions import ProcessCanceled
+from plugins import Config, Message, plugins
+from plugins.download import tg_download, url_download
+from plugins import humanbytes, progress, take_screen_shot
+from plugins import ProcessCanceled
 
-LOGGER = userge.getLogger(__name__)
-CHANNEL = userge.getCLogger(__name__)
+LOGGER = plugins.getLogger(__name__)
+CHANNEL = plugins.getCLogger(__name__)
 
 LOGO_PATH = "resources/logo_x.png"
 
 
-@userge.on_cmd(
+@ultroid.on_cmd(
     "rename",
     about={
         "header": "Rename telegram files",
@@ -48,7 +48,7 @@ async def rename_(message: Message):
         await message.edit("Please read `.help rename`", del_in=5)
 
 
-@userge.on_cmd(
+@ultroid.on_cmd(
     "convert",
     about={
         "header": "Convert telegram files",
@@ -67,7 +67,7 @@ async def convert_(message: Message):
         await message.edit("Please read `.help convert`", del_in=5)
 
 
-@userge.on_cmd(
+@ultroid.on_cmd(
     "upload",
     about={
         "header": "Upload files to telegram",
