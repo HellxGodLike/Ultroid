@@ -14,13 +14,13 @@ from PIL import Image
 from pyrogram.errors import FloodWait
 from pyrogram.types import CallbackQuery
 
-from plugins import Config, Message, plugins
-from plugins.download import tg_download, url_download
-from plugins import humanbytes, progress, take_screen_shot
-from plugins import ProcessCanceled
+from ultroid import Config, Message, plugins
+from ultroid.plugins.download import tg_download, url_download
+from ultroid.plugins import humanbytes, progress, take_screen_shot
+from ultroid.plugins import ProcessCanceled
 
-LOGGER = plugins.getLogger(__name__)
-CHANNEL = plugins.getCLogger(__name__)
+LOGGER = ultroid.getLogger(__name__)
+CHANNEL = ultroid.getCLogger(__name__)
 
 LOGO_PATH = "resources/logo_x.png"
 
